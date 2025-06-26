@@ -52,5 +52,17 @@ class Simple_Array_Example
         }
         System.out.println("Highest : "+max);
         System.out.println("Lowesr : "+min);
+
+        
+        for(int i=0;i<marks.length;i++)
+        {
+            if(marks[i]>=35)
+            {
+                int count=1;
+                count++;
+                System.out.println(count);
+            }
+            
+        }
     }
 }
