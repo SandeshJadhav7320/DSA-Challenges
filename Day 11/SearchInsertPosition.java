@@ -44,5 +44,28 @@ class SearchInsertPosition
         SearchInsertPosition sn=new SearchInsertPosition();
         int res=sn.searchInsert(arr,target);
         System.out.println(res);
+        System.out.println("Updated array :- ");
+        int newArr[]=new int[arr.length+1];
+
+        for (int i = 0; i < newArr.length; i++) 
+        {
+            if (i < res) 
+            {
+                newArr[i] = arr[i];
+            } 
+            else if (i == res) 
+            {
+                newArr[i] = target;
+            }
+            else 
+            {
+                 newArr[i] = arr[i - 1]; // shift right
+            }
+        }
+            // Print updated array
+          for (int i = 0; i < newArr.length; i++) 
+            {
+                System.out.print(newArr[i] + " ");
+            }  
     }
 }

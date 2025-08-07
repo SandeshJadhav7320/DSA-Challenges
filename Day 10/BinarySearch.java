@@ -21,7 +21,7 @@ class BinarySearch
                 return mid;
             }
         }
-        return -1;
+        return start;
     }
 
     public static void main(String args[])
