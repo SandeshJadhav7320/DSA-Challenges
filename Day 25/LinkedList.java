@@ -1,6 +1,14 @@
 //import java.util.Scanner;
 public class LinkedList 
 {
+    private int size;
+
+    public LinkedList()
+    {
+        this.size=0;
+    }
+    
+
     Node head;
     class Node
     {
@@ -11,13 +19,14 @@ public class LinkedList
         {
             this.data=data;
             this.next=null;
+            size++;
         }
     }
 
     public void addFirst(int data)
     {
         Node newNode =new Node(data);       // Create node 
-        if(head==null)                      //If list is empty then add element 
+        if(head==null)                      // If list is empty then add element 
         {
             head=newNode;
             return;
@@ -53,6 +62,7 @@ public class LinkedList
             System.out.println("List is empty ");
         }
         head=head.next;
+        size--;
     }
 
     public void deleteLast()
@@ -61,6 +71,7 @@ public class LinkedList
         {
             System.out.println("List is empty ");
         }
+        size--;
         if(head.next==null)
         {
             head=null;
@@ -90,6 +101,9 @@ public class LinkedList
         }
         System.out.println("null");
     }
+    public int  getSize(){
+        return size;
+    }
     public static void main(String[] args) 
     {
         //Scanner sc=new Scanner(System.in);
@@ -107,5 +121,7 @@ public class LinkedList
         ll.deleteLast();
         System.out.println("\nAfter deleting last element :- \n");
         ll.printList();
+        System.out.println("Length is :- "+ll.getSize());
+
     }
 }
