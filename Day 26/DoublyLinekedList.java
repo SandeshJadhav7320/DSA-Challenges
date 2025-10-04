@@ -78,6 +78,37 @@ public class DoublyLinekedList
         }
         System.out.println(" Null");
     }
+
+    public void deleteFront()
+    {
+        Node temp=head;
+        head=head.next;
+        if(head!=null)
+        {
+            head.pre=null;
+        }
+        temp.next=null;
+    }
+
+    public void deleteEnd()
+    {
+        if(head==null)
+        {
+            System.out.println("List is empty ");
+        }
+        if(head.next==null)
+        {
+            head=null;
+            return;
+        }
+
+        Node temp=head;
+        while(temp.next!=null)
+        {
+            temp=temp.next;
+        }
+        temp.pre.next=null;
+    }
     
     public static void main(String[] args) 
     {
@@ -89,6 +120,10 @@ public class DoublyLinekedList
         dl.insertAtEnd(20);
         dl.display();
         dl.displayBackword();
+        dl.deleteFront();
+        dl.display();
+        dl.deleteEnd();
+        dl.display();
 
     }
 }
