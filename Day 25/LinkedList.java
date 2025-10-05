@@ -55,6 +55,34 @@ public class LinkedList
         
     }
 
+    public void insertAtMiddle(int data,int position)
+    {
+        Node newNode=new Node(data);
+        Node temp=head;
+        if(head==null)
+        {
+            head=newNode;
+            return;
+        }
+        if(position==1)
+        {
+            newNode.next=head;
+            head=newNode;
+            return;
+        }
+        for(int i=1;i<position-1;i++)
+        {
+            if(temp==null)
+            {
+                System.out.println("Postion invalid");
+                
+            }
+            temp=temp.next;   
+        }
+            newNode.next=temp.next;
+            temp.next=newNode;
+    }
+
     public void deleteFirst()
     {
         if(head==null)
@@ -120,6 +148,11 @@ public class LinkedList
         ll.printList();
         ll.deleteLast();
         System.out.println("\nAfter deleting last element :- \n");
+        ll.printList();
+        ll.insertAtEnd(20);
+        ll.insertAtEnd(30);
+        ll.printList();
+        ll.insertAtMiddle(25, 3);
         ll.printList();
         System.out.println("Length is :- "+ll.getSize());
 
