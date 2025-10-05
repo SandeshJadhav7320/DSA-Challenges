@@ -79,6 +79,34 @@ public class DoublyLinekedList
         System.out.println(" Null");
     }
 
+    public void insertAtSpecific(int data,int position)
+    {
+        Node newNode=new Node(data);
+        if(head==null)
+        {
+            newNode.next=head;
+            head=newNode;
+            return;
+        }
+        if(position==1)
+        {
+            insertAtFront(data);
+            return;
+        }
+        Node temp=head;
+        for(int i=1;i<position-1;i++)
+        {
+            temp=temp.next;
+            if(temp==null)
+            {
+                System.out.println("Invalid position ");
+            }
+        }
+        newNode.next=temp.next;
+        temp.next.pre=newNode;
+        temp.next=newNode;
+        newNode.pre=temp;
+    }
     public void deleteFront()
     {
         Node temp=head;
@@ -124,6 +152,11 @@ public class DoublyLinekedList
         dl.display();
         dl.deleteEnd();
         dl.display();
-
+        dl.insertAtEnd(20);
+        dl.insertAtEnd(30);
+        dl.insertAtEnd(40);
+        dl.display();
+        dl.insertAtSpecific(35, 5);
+        dl.display();
     }
 }
