@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class FactorialUsingRecursion 
 {
-    public int fact(int num)
+    public static int fact(int num)
     {
         if(num==0)
         {
@@ -9,12 +9,20 @@ public class FactorialUsingRecursion
         }
         return num*fact(num-1);
     }
+    public static int sum(int num)
+    {
+        if(num==1)
+        {
+            return 1;
+        }
+        return num+sum(num-1);
+    }
     public static void main(String[] args) 
     {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter thr number you want to find factorial :- ");
         int num=sc.nextInt();
-        FactorialUsingRecursion fr=new FactorialUsingRecursion();
-        System.out.println(fr.fact(num));
+        System.out.println("Factorial is :-  "+fact(num));
+        System.out.println("Sum is :- "+sum(num));
     }
 }
