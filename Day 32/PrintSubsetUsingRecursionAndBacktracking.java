@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.*;
 public class PrintSubsetUsingRecursionAndBacktracking 
 {
     public static void printSubset(int arr[],ArrayList<Integer> current,int i)
@@ -11,7 +10,8 @@ public class PrintSubsetUsingRecursionAndBacktracking
             {
                 System.out.print(val + " ");
             }
-            System.out.println("]");
+            System.out.println(" ]");
+
             return;
         }
 
