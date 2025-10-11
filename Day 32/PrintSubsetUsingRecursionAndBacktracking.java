@@ -10,7 +10,7 @@ public class PrintSubsetUsingRecursionAndBacktracking
             {
                 System.out.print(val + " ");
             }
-            System.out.println(" ]");
+            System.out.println("]");
 
             return;
         }
