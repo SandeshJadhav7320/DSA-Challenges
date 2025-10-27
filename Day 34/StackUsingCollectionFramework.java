@@ -12,6 +12,18 @@ public class StackUsingCollectionFramework
         pushAtBottom(data,s);
         s.push(top);
     }
+
+    public static void reverse(Stack<Integer> s)
+    {
+        if(s.isEmpty())
+        {
+            return;
+        }
+
+        int top=s.pop();
+        reverse(s);
+        pushAtBottom(top,s);
+    }
     public static void main(String[] args) 
     {
         Stack<Integer> s=new Stack<>();
@@ -20,7 +32,7 @@ public class StackUsingCollectionFramework
         s.push(30);
         s.push(40);
         s.push(50);
-        pushAtBottom(5,s);
+        reverse(s);
 
         while(!s.isEmpty())
         {
